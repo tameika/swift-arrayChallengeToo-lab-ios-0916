@@ -26,10 +26,10 @@ class ViewController: UIViewController {
         
         switch name {
         case "Billy Crystal":
-            deliLine.insert(name, at: 0)
+            deliLine.insert(name, atIndex: 0)
             return "Welcome Billy! You can sit wherever you like."
         case "Meg Ryan":
-            deliLine.insert(name, at: 0)
+            deliLine.insert(name, atIndex: 0)
             return "Welcome Meg! You can sit wherever you like."
         default:
             deliLine.append(name)
