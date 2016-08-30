@@ -59,16 +59,21 @@ class ViewController: UIViewController {
     // 3.
     func deliLineDescription() -> String {
         
-        var result = "The line is:\n"
-        for (index, name) in deliLine.enumerate() {
-            switch index {
-            case deliLine.count - 1:
-                result.appendContentsOf("\(index+1). \(name)")
-            default:
-                result.appendContentsOf("\(index+1). \(name)\n")
+        switch deliLine.count {
+        case 0:
+            return "The line is currently empty."
+        default:
+            var result = "The line is:\n"
+            for (index, name) in deliLine.enumerate() {
+                switch index {
+                case deliLine.count - 1:
+                    result.appendContentsOf("\(index+1). \(name)")
+                default:
+                    result.appendContentsOf("\(index+1). \(name)\n")
+                }
             }
+            return result
         }
-        return result
     }
     
 }

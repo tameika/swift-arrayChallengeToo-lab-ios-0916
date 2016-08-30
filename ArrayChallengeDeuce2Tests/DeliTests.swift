@@ -142,5 +142,35 @@ class DeliSpec: QuickSpec {
             }
         }
         
+        describe("deliLineDescription()") { 
+            it("Should return the appropriate description with names of customers.") {
+                
+                // Establishing a line with 4 people on it before .
+                testVC.deliLine = ["Rob", "Catherine", "Paul", "Dom"]
+                
+                let description = testVC.deliLineDescription()
+                
+                let expectedDescription = "The line is:\n1. Rob\n2. Catherine\n3. Paul\n4. Dom"
+                
+                expect(description).to(equal(expectedDescription))
+                
+            }
+        }
+        
+        describe("deliLineDescription()") {
+            it("Should return the appropriate description when the line is empty.") {
+                
+                // Establishing a line with 4 people on it before .
+                testVC.deliLine = []
+                
+                let emptyDescription = testVC.deliLineDescription()
+                
+                let expectedEmptyDescription = "The line is currently empty."
+                
+                expect(emptyDescription).to(equal(expectedEmptyDescription))
+                
+            }
+        }
+        
     }
 }
