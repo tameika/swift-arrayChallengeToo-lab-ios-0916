@@ -45,7 +45,14 @@ class ViewController: UIViewController {
     // 2.
     func nowServing() -> String {
         
-        return deliLine.isEmpty ? "There is no-one to be served." : "Now serving \(deliLine[0])!"
+        switch deliLine.count {
+        case 0:
+            return "There is no one to be served."
+        default:
+            let customer = deliLine.removeAtIndex(0)
+            return "Now serving \(customer)!"
+        }
+        
     }
     
     
