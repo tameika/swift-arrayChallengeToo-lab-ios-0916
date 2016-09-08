@@ -21,12 +21,18 @@ class ViewController: UIViewController {
     
     func addNameToDeliLine(name: String) -> String {
         
-        if name == "Meg Ryan" || name == "Billy Crystal" {
+        if name == "Meg Ryan" {
             
             deliLine.insert(name, atIndex: 0)
             
-            return("Welcome \(name)! You can sit wherever you like.")
+            return("Welcome Meg! You can sit wherever you like.")
             
+        } else if name == "Billy Crystal" {
+            
+            deliLine.insert(name, atIndex: 0)
+            
+            return("Welcome Billy! You can sit wherever you like.")
+        
         } else if deliLine.isEmpty {
             
             deliLine.append(name)
@@ -37,7 +43,7 @@ class ViewController: UIViewController {
             
             deliLine.append(name)
             
-            return ("Welcome \(name) you're \(deliLine.indexOf(name)!) person in line!")
+            return ("Welcome \(name), you're number \(deliLine.count) in line.")
             
         }
         
@@ -77,7 +83,7 @@ class ViewController: UIViewController {
             
             for (index, name) in deliLine.enumerate() {
                 
-                description += ("\(index) \(name)")
+                description += ("\n\(index + 1). \(name)")
             }
             
             
